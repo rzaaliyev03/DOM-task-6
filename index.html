@@ -18,7 +18,7 @@
         <div class="flex items-center gap-3">
 
             <div
-                class="w-[55px] h-[55px] rounded-full bg-orange-500 flex items-center justify-center text-[28px] shadow-lg shadow-orange-500/30">
+                class="w-[55px] h-[55px] rounded-full bg-orange-500 flex items-center justify-center text-[28px] shadow-lg shadow-orange-500/30 hover:scale-110 duration-300 cursor-pointer">
                 🍕
             </div>
 
@@ -37,10 +37,11 @@
         <!-- SEARCH -->
         <div class="w-[420px]">
 
-            <input
+            <input 
                 type="text"
                 placeholder="Search pizza..."
-                class="w-full bg-zinc-900 border border-zinc-800 rounded-full px-6 py-3 outline-none focus:border-orange-500 duration-300 placeholder:text-zinc-500"
+                id="search"
+                class="w-full bg-zinc-900 border border-zinc-800 rounded-full px-6 py-3 outline-none focus:border-orange-500 hover:border-orange-400 duration-300 placeholder:text-zinc-500 hover:shadow-lg hover:shadow-orange-500/10"
             />
 
         </div>
@@ -66,7 +67,7 @@
                 </p>
 
                 <button
-                    class="mt-7 bg-white text-black px-7 py-3 rounded-full font-bold hover:scale-105 duration-300 cursor-pointer">
+                    class="mt-7 bg-white text-black px-7 py-3 rounded-full font-bold hover:scale-110 hover:bg-orange-500 hover:text-white duration-300 cursor-pointer">
                     Order Now
                 </button>
 
@@ -74,7 +75,7 @@
 
             <img
                 src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop"
-                class="w-[420px] rounded-[30px] rotate-[6deg] shadow-2xl"
+                class="w-[420px] rounded-[30px] rotate-[6deg] shadow-2xl hover:rotate-0 hover:scale-105 duration-500"
             />
 
         </div>
@@ -92,22 +93,22 @@
         <div class="flex gap-3">
 
             <button
-                class="bg-orange-500 px-5 py-2 rounded-full font-semibold hover:scale-105 duration-300 cursor-pointer">
+                class="bg-orange-500 px-5 py-2 rounded-full font-semibold hover:scale-110 hover:shadow-xl hover:shadow-orange-500/40 duration-300 cursor-pointer">
                 All
             </button>
 
             <button
-                class="bg-zinc-900 border border-zinc-800 px-5 py-2 rounded-full hover:bg-zinc-800 duration-300 cursor-pointer">
+                class="bg-zinc-900 border border-zinc-800 px-5 py-2 rounded-full hover:bg-orange-500 hover:border-orange-500 hover:scale-105 duration-300 cursor-pointer">
                 Pizza
             </button>
 
             <button
-                class="bg-zinc-900 border border-zinc-800 px-5 py-2 rounded-full hover:bg-zinc-800 duration-300 cursor-pointer">
+                class="bg-zinc-900 border border-zinc-800 px-5 py-2 rounded-full hover:bg-orange-500 hover:border-orange-500 hover:scale-105 duration-300 cursor-pointer">
                 Drinks
             </button>
 
             <button
-                class="bg-zinc-900 border border-zinc-800 px-5 py-2 rounded-full hover:bg-zinc-800 duration-300 cursor-pointer">
+                class="bg-zinc-900 border border-zinc-800 px-5 py-2 rounded-full hover:bg-orange-500 hover:border-orange-500 hover:scale-105 duration-300 cursor-pointer">
                 Dessert
             </button>
 
@@ -131,11 +132,11 @@
     <div id="sebetBtn" class="fixed right-8 bottom-8 z-50">
 
         <button
-            class="relative bg-orange-500 w-[75px] h-[75px] rounded-full text-[32px] shadow-2xl shadow-orange-500/40 hover:scale-110 duration-300 cursor-pointer">
+            class="relative bg-orange-500 w-[75px] h-[75px] rounded-full text-[32px] shadow-2xl shadow-orange-500/40 hover:scale-125 hover:rotate-12 duration-300 cursor-pointer">
 
             🛒
 
-            <span
+            <span id="cartCount"
                 class="absolute -top-2 -right-2 bg-white text-black w-[30px] h-[30px] rounded-full text-[14px] font-black flex items-center justify-center">
                 0
             </span>
@@ -144,7 +145,9 @@
 
     </div>
 
-    <!-- LEFT CART (SEBET PANEL) -->
+
+
+<!-- LEFT CART (SEBET PANEL) -->
 <div
     id="sebetPanel"
     class="hidden modal-content fixed top-0 left-0 h-full w-[380px] bg-zinc-900 border-r border-zinc-800 z-50 p-5 overflow-y-auto"
@@ -152,24 +155,39 @@
 
     <!-- HEADER -->
     <div class="flex items-center justify-between mb-6">
+
         <h2 class="text-[22px] font-bold text-orange-500">
             Səbət
         </h2>
 
-        <button
-            id="closeCart"
-            class="text-white text-[24px] hover:text-orange-500 duration-200"
-        >
-            ✕
-        </button>
+        <div class="flex items-center gap-3">
+
+            <!-- CLEAR CART -->
+            <button
+                id="clearCart"
+                class="bg-red-500 px-3 py-1 rounded-lg text-[14px] hover:bg-red-600 duration-300"
+            >
+                Clear
+            </button>
+
+            <!-- CLOSE CART -->
+            <button
+                id="closeCart"
+                class="text-white text-[24px] hover:text-orange-500 duration-200"
+            >
+                ✕
+            </button>
+
+        </div>
+
     </div>
 
     <!-- ITEMS -->
     <div id="sebetItems" class="space-y-4">
         
     </div>
+
 </div>
-    
 
     <script src="./main.js"></script>
 
